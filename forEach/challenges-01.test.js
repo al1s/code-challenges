@@ -51,7 +51,7 @@ const addCurve = arr => {
   // Solution code here...
   var arrResult = [];
   for (let i in arr) {
-    let result = Number((arr[i] * 1.05).toFixed(2));
+    let result = arr[i] * 1.05;
     arrResult.push(result);
   }
   return arrResult;
@@ -95,6 +95,7 @@ const speaker = (message, callback) => {
 
 const addValues = (arr, value) => {
   // Solution code here...
+  return arr.map(elm => elm + value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
