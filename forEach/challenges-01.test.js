@@ -95,11 +95,17 @@ const speaker = (message, callback) => {
 
 const addValues = (arr, value) => {
   // Solution code here...
-  return arr.map(elm => elm + value);
+  let arrResult = [...arr];
+  arrResult.push(value);
+  return arrResult;
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i++) {
+    arr = callback(arr, num);
+  }
+  return arr;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -238,7 +244,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should add the number 8 to the array five times", () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
