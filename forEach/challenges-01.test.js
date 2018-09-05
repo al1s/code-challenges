@@ -124,10 +124,16 @@ const addNumbers = (num, arr, times, callback) => {
 
 const removeOne = (num, input) => {
   // Solution code here...
+  if (num % 3 === 2) input.pop();
+  return input;
 };
 
 const removeElements = (input, callback) => {
   // Solution code here...
+  for (let elm of input) {
+    callback(elm, input);
+  }
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -251,7 +257,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should remove three elements from the array", () => {
     expect(
       removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)
