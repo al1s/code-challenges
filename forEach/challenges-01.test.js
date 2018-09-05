@@ -209,6 +209,14 @@ const createList = availableItems => {
 
 const fizzbuzz = arr => {
   // Solution code here...
+  let arrResult = [];
+  arr.forEach(elm => {
+    if (elm % 3 === 0 && elm % 5 === 0) arrResult.push("Fizz Buzz");
+    else if (elm % 3 === 0) arrResult.push("Fizz");
+    else if (elm % 5 === 0) arrResult.push("Buzz");
+    else arrResult.push(elm);
+  });
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -321,7 +329,7 @@ describe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test("It should print out messages or numbers", () => {
