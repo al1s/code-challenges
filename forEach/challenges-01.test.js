@@ -144,6 +144,8 @@ const removeElements = (input, callback) => {
 
 const removeWithForEach = (input, callback) => {
   // Solution code here...
+  input.forEach(elm => callback(elm, input));
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -268,7 +270,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should remove three elements from the array", () => {
     expect(
       removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)
