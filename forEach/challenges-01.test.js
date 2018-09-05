@@ -161,6 +161,11 @@ const removeWithForEach = (input, callback) => {
 
 const removeWithAnon = input => {
   // Solution code here...
+
+  input.forEach((elm, ndx, arr) => {
+    if (elm % 3 === 2) arr.pop();
+  });
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -281,7 +286,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should remove three elements from the array", () => {
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([
       1,
