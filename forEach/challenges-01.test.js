@@ -188,6 +188,9 @@ const removeWithAnon = input => {
 
 const createList = availableItems => {
   // Solution code here...
+  let arrResult = [];
+  availableItems.forEach(elm => elm.available && arrResult.push(elm.name));
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -303,7 +306,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   const inventory = [
     { name: "apples", available: true },
     { name: "pears", available: true },
