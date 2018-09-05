@@ -31,6 +31,11 @@ const pushIntoSecond = arr => {
 
 const addBonusPoints = arr => {
   // Solution code here...
+  let arrResult = [];
+  for (let elm of arr) {
+    arrResult.push(elm + 5);
+  }
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -193,7 +198,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should add five bonus points to each raw score", () => {
     expect(addBonusPoints([55, 79, 100, 85, 92])).toStrictEqual([
       60,
