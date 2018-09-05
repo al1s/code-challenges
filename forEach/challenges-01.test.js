@@ -47,9 +47,14 @@ const addBonusPoints = arr => {
 //
 // Return an array of curved scores;
 // ------------------------------------------------------------------------------------------------
-
 const addCurve = arr => {
   // Solution code here...
+  var arrResult = [];
+  for (let i in arr) {
+    let result = Number((arr[i] * 1.05).toFixed(2));
+    arrResult.push(result);
+  }
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -63,10 +68,12 @@ const addCurve = arr => {
 
 const greeting = word => {
   // Solution code here...
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
   // Solution code here...
+  return callback(message);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -210,7 +217,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should increase each raw score by 5%", () => {
     expect(addCurve([55, 79, 100, 85, 92])).toStrictEqual([
       57.75,
@@ -222,7 +229,7 @@ xdescribe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should return the message with all uppercase characters", () => {
     expect(speaker("hello 301 students!", greeting)).toStrictEqual(
       "HELLO 301 STUDENTS!"
