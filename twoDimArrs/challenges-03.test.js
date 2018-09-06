@@ -54,6 +54,7 @@ const errands = [
 
 const howManyTreats = arr => {
   // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -241,7 +242,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should return the number 24", () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
