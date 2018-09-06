@@ -82,6 +82,15 @@ const salesData = data => {
 
 const giveValentines = list => {
   // Solution code here...
+  let arrResult = [];
+  list.forEach((elm, ndx) => {
+    list.forEach((elmInner, ndxInner) => {
+      if (ndx !== ndxInner) {
+        arrResult.push(`${elm} gives a Valentine to ${elmInner}.`);
+      }
+    });
+  });
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
