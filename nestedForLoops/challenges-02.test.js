@@ -61,6 +61,11 @@ const grandTotal = (hours, stores) => {
 
 const salesData = data => {
   // Solution code here...
+  let arrResult = [];
+  data.forEach((elm, ndx) =>
+    arrResult.push({ sales: `${elm} cookies`, time: hoursOpen[ndx] })
+  );
+  return arrResult;
 };
 
 // ------------------------------------------------------------------------------------------------
