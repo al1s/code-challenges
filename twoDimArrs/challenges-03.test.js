@@ -77,6 +77,7 @@ const howManyTreats = arr => {
 
 const battleship = (board, row, col) => {
   // Solution code here...
+  return board[row][col] === "#" ? "hit" : "miss";
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -253,7 +254,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   const battleshipData = [
     ["#", " ", "#", " "],
     ["#", " ", "#", " "],
