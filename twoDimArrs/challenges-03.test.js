@@ -15,6 +15,7 @@ const nestedArray = [
 
 const findFourteen = array => {
   // Solution code here...
+  return array[2][0][1];
 };
 
 // ------------------------------------------------------------------------------------------------
