@@ -217,6 +217,29 @@ const excel = str => {
 
 const detectTicTacToeWin = board => {
   // Solution code here...
+  let result = false;
+  let winningCond = [
+    [1, 1, 2, 2, 3, 3],
+    [1, 3, 2, 2, 3, 1],
+    [1, 1, 1, 2, 1, 3],
+    [2, 1, 2, 2, 2, 3],
+    [3, 1, 3, 2, 3, 3],
+    [1, 1, 2, 1, 3, 1],
+    [1, 2, 2, 2, 3, 2],
+    [1, 3, 2, 3, 3, 3]
+  ];
+  winningCond.forEach(elm => {
+    result = result
+      ? result
+      : (board[elm[0] - 1][elm[1] - 1] === "X" &&
+          board[elm[2] - 1][elm[3] - 1] === "X" &&
+          board[elm[4] - 1][elm[5] - 1] === "X") ||
+        (board[elm[0] - 1][elm[1] - 1] === "O" &&
+          board[elm[2] - 1][elm[3] - 1] === "O" &&
+          board[elm[4] - 1][elm[5] - 1] === "O");
+  });
+  console.log(result);
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -338,7 +361,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return true if there are three in a row", () => {
     expect(
       detectTicTacToeWin([["X", "", "O"], ["X", "O", ""], ["X", "O", "X"]])
