@@ -118,6 +118,11 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = weather => {
   // Solution code here...
+  let result = 0;
+  let weatherFlatten = [];
+  weather.forEach(elm => (weatherFlatten = [...weatherFlatten, ...elm]));
+  weatherFlatten.forEach(elm => (result += elm));
+  return result / weatherFlatten.length;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -293,7 +298,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should calculate and return the average temperature of the data set", () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
