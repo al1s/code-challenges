@@ -92,6 +92,11 @@ const battleship = (board, row, col) => {
 
 const calculateProduct = numbers => {
   // Solution code here...
+  let result = 1;
+  numbers.forEach(elm =>
+    elm.forEach(elmInner => (result *= elmInner === undefined ? 1 : elmInner))
+  );
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -273,7 +278,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should multiply all the numbers together", () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
