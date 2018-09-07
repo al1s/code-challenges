@@ -183,6 +183,14 @@ const lowestWeeklyAverage = weather => {
 
 const excel = str => {
   // Solution code here...
+  let result = [];
+  let arr = str.split("\n");
+  arr.forEach((elm, ndx) => {
+    let rowSum = 0;
+    elm.split(",").forEach(elmInner => (rowSum += Number(elmInner)));
+    result.push(rowSum);
+  });
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -320,7 +328,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return the total count for each row", () => {
     let result = excel("1,1,1\n4,4,4\n9,9,9");
     expect(result.length).toStrictEqual(3);
