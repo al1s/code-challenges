@@ -199,6 +199,7 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 
 const removeVowels = input => {
   // Solution code here...
+  return input.replace(/([aeiou])/g, "");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -214,6 +215,13 @@ const removeVowels = input => {
 
 const extractVowels = input => {
   // Solution code here...
+  return [
+    removeVowels(input),
+    input
+      .match(/[aeiou]/g)
+      .sort()
+      .join("")
+  ];
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -358,7 +366,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return the string without vowels", () => {
     expect(removeVowels("gregor")).toStrictEqual("grgr");
     expect(removeVowels("gregor").length).toStrictEqual(4);
@@ -367,7 +375,7 @@ xdescribe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should return the string without vowels", () => {
     expect(extractVowels("gregor")).toStrictEqual(["grgr", "eo"]);
     expect(extractVowels("gregor").length).toStrictEqual(2);
