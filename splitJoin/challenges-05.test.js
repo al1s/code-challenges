@@ -160,6 +160,11 @@ const splitFoods = recipe => {
 
 const removeEvenValues = input => {
   // Solution code here...
+  input.forEach((elm, ndx, arr) => {
+    if (elm % 2 === 0) arr.splice(ndx, 1);
+    if (arr[ndx - 1] % 2 === 0) arr.splice(ndx - 1, 1);
+  });
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -321,7 +326,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
