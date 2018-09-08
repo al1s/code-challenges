@@ -17,7 +17,7 @@
 const howMuchPencil = name => {
   let result = [];
   // Solution code here...
-  let nameInner = [...name];
+  let nameInner = name.split("");
   nameInner.push("");
   result = nameInner.map((elm, ndx, arr) =>
     arr.slice(ndx, arr.length).join("")
@@ -36,6 +36,8 @@ const howMuchPencil = name => {
 
 const wordsToCharList = input => {
   // Solution code here...
+  // return [...input];
+  return input.split("");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -220,7 +222,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should return an array of individual letters", () => {
     expect(wordsToCharList("Gregor")).toStrictEqual([
       "G",
