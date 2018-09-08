@@ -95,6 +95,7 @@ const noPunctuation = input => {
 
 let hangman = str => {
   // Solution code here...
+  return str.replace(/[aeiou]/g, "_");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -272,7 +273,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   let startString =
     "This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!";
 
