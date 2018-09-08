@@ -59,8 +59,7 @@ const citiesAtoJ = cities => {
 
 const matchMonth = input => {
   // Solution code here...
-  let regex = /^[oO]ct(?:ober)?$/;
-  return regex.test(String(input));
+  return /^[oO]ct(?:ober)?$/.test(String(input));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -78,6 +77,7 @@ const matchMonth = input => {
 
 const noPunctuation = input => {
   // Solution code here...
+  return input.match(/\w+\s/g);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -214,7 +214,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   const lorem =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.";
 
