@@ -113,6 +113,7 @@ const seashells =
 
 const findShells = phrase => {
   // Solution code here...
+  return phrase.match(/\w+ells\b/g);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -288,7 +289,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test('It should return an array of instances of "sells", shells", and "seashells"', () => {
     expect(findShells(seashells)).toStrictEqual([
       "sells",
