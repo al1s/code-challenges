@@ -183,6 +183,9 @@ const removeEvenValues = input => {
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  if (numberOfCharacters < 0) return str;
+  if (numberOfCharacters >= str.length) return "";
+  return [...str].splice(0, str.length - numberOfCharacters).join("");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -339,7 +342,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should shorten the string based on the first argument", () => {
     expect(removeLastCharacters("Gregor", 2)).toStrictEqual("Greg");
     expect(removeLastCharacters("Gregor", 2).length).toStrictEqual(4);
