@@ -42,6 +42,7 @@ const isCapitalized = string => {
 
 const citiesAtoJ = cities => {
   // Solution code here...
+  return cities.filter(elm => /^[A-J]/.test(elm));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -153,7 +154,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   let cities = [
     "Cleveland",
     "San Diego",
