@@ -50,6 +50,10 @@ const wordsToCharList = input => {
 const totalSumCSV = input => {
   let total = 0;
   // Solution code here...
+  input
+    .split(",")
+    .map(Number)
+    .forEach(elm => (total += elm));
   return total;
 };
 
@@ -245,7 +249,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should add up the numbers contained within the string", () => {
     expect(totalSumCSV("1,4,5,7,2")).toStrictEqual(19);
     expect(totalSumCSV("147")).toStrictEqual(147);
