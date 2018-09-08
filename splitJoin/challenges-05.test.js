@@ -101,6 +101,10 @@ const gruffaloCrumble = {
 const listFoods = recipe => {
   let result = [];
   // Solution code here...
+  result = recipe.ingredients.map(elm => {
+    let thirdWordStartPosition = elm.indexOf(" ", elm.indexOf(" ") + 1) + 1;
+    return elm.slice(thirdWordStartPosition, elm.length);
+  });
   return result;
 };
 
@@ -256,7 +260,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should return a list of foods", () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual([
       "Gruffalo",
