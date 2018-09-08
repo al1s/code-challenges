@@ -59,6 +59,8 @@ const citiesAtoJ = cities => {
 
 const matchMonth = input => {
   // Solution code here...
+  let regex = /^[oO]ct(?:ober)?$/;
+  return regex.test(String(input));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -194,7 +196,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should match any of the acceptable inputs", () => {
     expect(matchMonth("Oct")).toBeTruthy();
     expect(matchMonth("oct")).toBeTruthy();
