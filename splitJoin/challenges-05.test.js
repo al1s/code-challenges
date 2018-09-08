@@ -136,6 +136,12 @@ const stepActions = recipe => {
 const splitFoods = recipe => {
   let result = [];
   // Solution code here...
+  result = recipe.ingredients.map(elm =>
+    elm
+      .split(" ")
+      .slice(2)
+      .join(" ")
+  );
   return result;
 };
 
@@ -297,7 +303,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should return a list of foods", () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual([
       "Gruffalo",
