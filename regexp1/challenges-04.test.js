@@ -23,13 +23,14 @@ const isNum = num => {
 // CHALLENGE 2
 //
 // Write a function named isCapitalized that takes in a string. This function should use a
-// regular expression pattern to match all words that begin with a capital letter.
+// regular expression pattern to match all words nthat begin with a capital letter.
 //
 // Return an array containing all the matches.
 // ------------------------------------------------------------------------------------------------
 
 const isCapitalized = string => {
   // Solution code here...
+  return string.match(/[A-Z]\w*\b/g);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -135,7 +136,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should only return words that begin with a capital letter", () => {
     const capitalResult = isCapitalized(
       "We only want to Return the Words that begin With a capital Letter"
