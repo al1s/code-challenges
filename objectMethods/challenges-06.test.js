@@ -164,6 +164,15 @@ const hasChildrenValues = (arr, character) => {
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let result = false;
+  arr.forEach(elm => {
+    if (elm.name === character) {
+      getFrom(elm, "entries").forEach(elmInner => {
+        if (elmInner[0] === "children") result = elmInner[0].length !== 0;
+      });
+    }
+  });
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -336,7 +345,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return true for characters that have children", () => {
     expect(hasChildrenEntries(characters, "Eddard")).toBeTruthy();
   });
