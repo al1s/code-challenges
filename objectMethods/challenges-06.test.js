@@ -133,7 +133,7 @@ const totalCharacters = arr => {
 
 const getHouses = arr => {
   // Solution code here...
-  return getFrom(characters, "values").map(elm => elm.house);
+  return getFrom(arr, "values").map(elm => elm.house);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -145,6 +145,13 @@ const getHouses = arr => {
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let result = false;
+  getFrom(arr, "values").forEach(elm => {
+    if (elm.name === character) {
+      result = elm.children.length !== 0;
+    }
+  });
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
