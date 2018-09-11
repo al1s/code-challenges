@@ -185,6 +185,33 @@ const hasChildrenEntries = (arr, character) => {
 
 const houseSize = arr => {
   // Solution code here...
+  let objChildren = arr.reduce((res, elm) => {
+    let house = "";
+    let childrenCnt = 0;
+    let spouseCnt = 0;
+    // console.log({ elm });
+    getFrom(elm, "entries").forEach(elmInner => {
+      // console.log({ elmInner });
+      switch (elmInner[0]) {
+        case "house":
+          house = elmInner[1];
+          break;
+        case "children":
+          childrenCnt = elmInner[1].length;
+          break;
+        case "spouse":
+          spouseCnt = elmInner[1] ? 1 : 0;
+          break;
+      }
+    });
+    res.push({
+      house,
+      members: (res[house] || 0) + spouseCnt + childrenCnt + 1
+    });
+    return res;
+  }, []);
+  console.log(objChildren);
+  return objChildren;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -355,7 +382,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return an object for each house containing the name and size", () => {
     expect(houseSize(characters)).toStrictEqual([
       { house: "Stark", members: 7 },
