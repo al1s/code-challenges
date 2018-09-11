@@ -122,7 +122,6 @@ let characters = [
 const totalCharacters = arr => {
   // Solution code here...
   return getFrom(arr, "entries").length;
-  // return arr.length;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -134,6 +133,7 @@ const totalCharacters = arr => {
 
 const getHouses = arr => {
   // Solution code here...
+  return getFrom(characters, "values").map(elm => elm.house);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -304,7 +304,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("something specific", () => {
     expect(getHouses(characters)).toStrictEqual([
       "Stark",
@@ -319,7 +319,7 @@ xdescribe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return true for characters that have children", () => {
     expect(hasChildrenValues(characters, "Daenarys")).toBeTruthy();
   });
