@@ -189,9 +189,7 @@ const houseSize = arr => {
     let house = "";
     let childrenCnt = 0;
     let spouseCnt = 0;
-    // console.log({ elm });
     getFrom(elm, "entries").forEach(elmInner => {
-      // console.log({ elmInner });
       switch (elmInner[0]) {
         case "house":
           house = elmInner[1];
@@ -210,7 +208,6 @@ const houseSize = arr => {
     });
     return res;
   }, []);
-  console.log(objChildren);
   return objChildren;
 };
 
@@ -230,6 +227,34 @@ const deceasedSpouses = ["Catelyn", "Lysa", "Robert", "Khal Drogo", "Alerie"];
 
 const houseSurvivors = arr => {
   // Solution code here...
+  let objChildren = arr.reduce((res, elm) => {
+    let house = "";
+    let childrenCnt = 0;
+    let spouseCnt = 0;
+    getFrom(elm, "entries").forEach(elmInner => {
+      switch (elmInner[0]) {
+        case "house":
+          house = elmInner[1];
+          break;
+        case "children":
+          childrenCnt = elmInner[1].length;
+          break;
+        case "spouse":
+          spouseCnt = elmInner[1]
+            ? deceasedSpouses.includes(elmInner[1])
+              ? 0
+              : 1
+            : 0;
+          break;
+      }
+    });
+    res.push({
+      house,
+      members: (res[house] || 0) + spouseCnt + childrenCnt + 1
+    });
+    return res;
+  }, []);
+  return objChildren;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -397,7 +422,7 @@ describe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should not include any deceased spouses", () => {
     expect(houseSurvivors(characters)).toStrictEqual([
       { house: "Stark", members: 6 },
