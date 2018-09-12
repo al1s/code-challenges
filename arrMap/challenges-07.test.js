@@ -79,6 +79,9 @@ const charCode = input => {
 
 const evenOdd = input => {
   // Solution code here...
+  return input.map(
+    elm => (typeof elm !== "number" ? "N/A" : elm % 2 === 0 ? "even" : "odd")
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -233,7 +236,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should return an array containing the keys from an object", () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([
       "odd",
