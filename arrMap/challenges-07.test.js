@@ -174,6 +174,10 @@ const snorlaxStats = {
 
 const extractStats = stats => {
   // Solution code here...
+  return stats.map(elm => ({
+    name: elm.stat.name,
+    total: elm.effort + elm.baseStat
+  }));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -298,7 +302,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return an array containing objects with name and total values", () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: "speed", total: 35 },
