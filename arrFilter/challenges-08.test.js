@@ -103,6 +103,7 @@ const getBaseStatGreaterThan = (input, minBaseStat) => {
 
 const getStatName = (input, minBaseStat) => {
   // Solution code here...
+  return getBaseStatGreaterThan(input, minBaseStat).map(elm => elm.stat.name);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -313,7 +314,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should return the name of the stats that exceed that maximum", () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([
       "special-defense",
