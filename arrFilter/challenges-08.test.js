@@ -88,6 +88,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (input, minBaseStat) => {
   // Solution code here...
+  return input.filter(elm => elm.baseStat > minBaseStat && elm);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -280,7 +281,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should return an array containing the stats that are greater than the input", () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([
       {
