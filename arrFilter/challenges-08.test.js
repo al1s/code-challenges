@@ -41,6 +41,7 @@ const filterStringsWithVowels = input => {
 
 const notInFirstArray = (forbiddenValues, input) => {
   // Solution code here...
+  return input.filter(elm => !forbiddenValues.includes(elm));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -250,7 +251,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   const firstNums = [1, 2, 3];
   const secondNums = [1, 2, 3, 4];
 
