@@ -27,6 +27,7 @@ const oddValues = input => {
 
 const filterStringsWithVowels = input => {
   // Solution code here...
+  return input.filter(elm => /[aeiou]/.test(elm));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -196,7 +197,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should return an array containing only words that have vowels", () => {
     expect(filterStringsWithVowels(["gregor", "hound", "xyz"])).toStrictEqual([
       "gregor",
