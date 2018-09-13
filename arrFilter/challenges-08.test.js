@@ -158,6 +158,10 @@ const characters = [
 
 const getCharactersWithoutChildren = input => {
   // Solution code here...
+  return input.filter(elm => {
+    if (elm.children && elm.children.length !== 0) return false;
+    else return true;
+  });
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -343,7 +347,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should return an array containing characters who do not have children", () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([
       { name: "Sansa", spouse: "Tyrion", house: "Stark" },
