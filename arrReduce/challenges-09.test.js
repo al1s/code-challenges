@@ -259,6 +259,7 @@ let starWarsData = [
 
 const returnNames = data => {
   // Solution code here...
+  return data.reduce((res, elm, ndx) => [...res, elm.name], []);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -330,7 +331,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return a count of the prime numbers in the array", () => {
     expect(returnNames(starWarsData)).toStrictEqual([
       "Luke Skywalker",
