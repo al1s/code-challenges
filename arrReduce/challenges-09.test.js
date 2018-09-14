@@ -163,6 +163,12 @@ const extractChildren = input => {
 
 const reversedString = input => {
   // Solution code here...
+  return [...input]
+    .reduce((res, elm) => {
+      res.unshift(elm);
+      return res;
+    }, [])
+    .join("");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -308,7 +314,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should return the string with the characters in reverse order", () => {
     expect(reversedString("Code 301")).toStrictEqual("103 edoC");
   });
