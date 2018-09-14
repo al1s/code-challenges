@@ -132,6 +132,7 @@ const extractStat = (statName, input) => {
 
 const calculateAverage = input => {
   // Solution code here...
+  return input.reduce((res, elm) => (res += elm), 0) / input.length;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -280,7 +281,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should return the average of the numbers in the array", () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85])).toStrictEqual(64);
   });
