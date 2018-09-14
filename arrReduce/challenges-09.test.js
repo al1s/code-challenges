@@ -147,6 +147,9 @@ const calculateAverage = input => {
 
 const extractChildren = input => {
   // Solution code here...
+  return input
+    .filter(elm => /a/.test(elm.name))
+    .reduce((res, elm) => (res = [...res, ...(elm.children || [])]), []);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -287,7 +290,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should return an array containing the names of the children", () => {
     expect(extractChildren(characters)).toStrictEqual([
       "Robb",
