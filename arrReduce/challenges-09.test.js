@@ -115,6 +115,12 @@ const snorlaxData = {
 
 const extractStat = (statName, input) => {
   // Solution code here...
+  return input.reduce((res, elm, ndx) => {
+    if (!res) {
+      res = elm.stat.name === statName && elm;
+    }
+    return res;
+  }, null);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -264,7 +270,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should return any stats that match the input", () => {
     expect(extractStat("speed", snorlaxData.stats)).toStrictEqual({
       stat: { url: "https://pokeapi.co/api/v2/stat/6/", name: "speed" },
