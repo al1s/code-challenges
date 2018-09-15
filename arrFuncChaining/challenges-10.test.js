@@ -13,6 +13,14 @@
 
 const count = (target, input) => {
   // Solution code here...
+  return input.reduce(
+    (res, elm) =>
+      (res += elm.reduce(
+        (resInner, elmInner) => (resInner += target === elmInner ? 1 : 0),
+        0
+      )),
+    0
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
