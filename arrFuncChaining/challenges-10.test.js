@@ -144,6 +144,10 @@ let findMaleAndFemale = data => {
 
 let findShortest = data => {
   // Solution code here...
+  return data.reduce((prev, curr) => {
+    if (prev.height < curr.height) return prev;
+    else return curr;
+  }).name;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -218,7 +222,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should return the shortest character", () => {
     expect(findShortest(starWarsData)).toStrictEqual("Leia Organa");
   });
