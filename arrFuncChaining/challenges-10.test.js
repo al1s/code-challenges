@@ -53,6 +53,11 @@ const totalSum = input => {
 
 const divisibleByFiveTwoToThePower = input => {
   // Solution code here...
+  return input
+    .map(elm =>
+      elm.filter(elmInner => typeof elmInner === "number" && elmInner % 5 === 0)
+    )
+    .map(elm => elm.map(elmInner => 2 ** elmInner));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -168,7 +173,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should return numbers divisible by five, then raise two to the power of the resulting numbers", () => {
     expect(
       divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])
