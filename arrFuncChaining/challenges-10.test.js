@@ -126,6 +126,12 @@ let starWarsData = [
 
 let findMaleAndFemale = data => {
   // Solution code here...
+  return data
+    .filter(elm => ["male", "female"].includes(elm.gender))
+    .reduce(
+      (res, elm) =>
+        `${typeof res === "object" ? res.name : res} and ${elm.name}`
+    );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -197,7 +203,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should return only characters that are male or female", () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual(
       "Luke Skywalker and Darth Vader and Leia Organa"
