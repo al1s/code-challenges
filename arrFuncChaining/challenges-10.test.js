@@ -34,6 +34,9 @@ const count = (target, input) => {
 
 const totalSum = input => {
   // Solution code here...
+  return input
+    .reduce((res, elm) => [...res, ...elm], [])
+    .reduce((res, elm) => (res += elm), 0);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -157,7 +160,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should add all the numbers in the arrays", () => {
     const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6]];
 
