@@ -83,6 +83,7 @@ const validateEmail = email => {
 
 const validatePhoneNumber = phoneNumber => {
   // Solution code here...
+  return /^\(?[0-9]{3}[\)-]?\s*[0-9]{3}-?\s*[0-9]{4}$/.test(phoneNumber);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -155,7 +156,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should match the acceptable phone number formats", () => {
     expect(validatePhoneNumber("(555) 555-5555")).toBeTruthy();
     expect(validatePhoneNumber("555 555-5555")).toBeTruthy();
