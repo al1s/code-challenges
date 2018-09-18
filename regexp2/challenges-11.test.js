@@ -55,6 +55,9 @@ const findTagNames = elements => {
 
 const validateEmail = email => {
   // Solution code here...
+  return /^(?:[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?)@[a-zA-Z0-9\.]+\.(net|com|org)$/.test(
+    email
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -122,7 +125,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should match a basic email", () => {
     expect(validateEmail("joe@codefellows.com")).toBeTruthy();
   });
