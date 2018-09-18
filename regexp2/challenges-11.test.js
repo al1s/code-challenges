@@ -26,6 +26,14 @@ const validatePin = pin => {
 
 const findTagNames = elements => {
   // Solution code here...
+  return elements.reduce((res, elm) => {
+    let pattern = /<(\/\w+)>/g;
+    let match;
+    while ((match = pattern.exec(elm))) {
+      res.push(match[1]);
+    }
+    return res;
+  }, []);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -98,7 +106,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should return the closing tags", () => {
     expect(
       findTagNames(["<h1>Hello, world!</h1>", "<p>Welcome to my site</p>"])
