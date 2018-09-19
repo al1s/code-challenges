@@ -36,6 +36,7 @@ const alphabetize = strings => {
 
 const sortByLength = strings => {
   // Solution code here...
+  return strings.sort((a, b) => a.length - b.length);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -199,7 +200,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should sort strings by length", () => {
     const ans = sortByLength(["alphabet", "Zebra", "Alphabet", "carrot"]);
     expect(ans.slice(0, 2)).toStrictEqual(["Zebra", "carrot"]);
