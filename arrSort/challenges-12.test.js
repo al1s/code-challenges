@@ -24,6 +24,7 @@ const sortBackwards = nums => {
 
 const alphabetize = strings => {
   // Solution code here...
+  return strings.sort();
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -184,7 +185,7 @@ describe("Testing challenge 1", () => {
   });
 });
 
-xdescribe("Testing challenge 2", () => {
+describe("Testing challenge 2", () => {
   test("It should sort strings alphabetically", () => {
     expect(
       alphabetize(["alphabet", "Zebra", "Alphabet", "carrot"])
