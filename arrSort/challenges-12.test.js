@@ -83,6 +83,7 @@ const sortByPrice = objs => {
 
 const sortNumbersByLength = nums => {
   // Solution code here...
+  return nums.sort((a, b) => String(a).length - String(b).length);
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -249,7 +250,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should sort numbers by their length", () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([
       1,
