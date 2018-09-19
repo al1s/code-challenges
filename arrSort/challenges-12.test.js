@@ -158,6 +158,18 @@ const meetings = [
 
 const sortMeetingsByDay = meetings => {
   // Solution code here...
+  let dayNums = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  return meetings.sort(
+    (a, b) => dayNums.indexOf(a.dayOfWeek) - dayNums.indexOf(b.dayOfWeek)
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -317,7 +329,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should sort meetings by the day on which they happen", () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0, 2)).toEqual(
