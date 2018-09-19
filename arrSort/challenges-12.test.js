@@ -69,6 +69,7 @@ const alphabetizeBetter = strs => {
 
 const sortByPrice = objs => {
   // Solution code here...
+  return objs.sort((a, b) => a.price - b.price);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -227,7 +228,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should sort items by their price", () => {
     expect(
       sortByPrice([
