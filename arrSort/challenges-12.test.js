@@ -183,6 +183,24 @@ const sortMeetingsByDay = meetings => {
 
 const sortSchedule = meetings => {
   // Solution code here...
+  let dayNums = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let strToTime = str =>
+    new Date("1970", "01", "01", str.slice(0, 2), str.slice(2, 4));
+  return meetings.sort(
+    (a, b) =>
+      dayNums.indexOf(a.dayOfWeek) +
+      (strToTime(a.end) - strToTime(a.start)) / 1000 / 60 / 60 -
+      (dayNums.indexOf(b.dayOfWeek) +
+        (strToTime(b.end) - strToTime(b.start)) / 1000 / 60 / 60)
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -353,7 +371,7 @@ describe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should sort meetings by when they happen", () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting("Monday", "0900", "0945"),
