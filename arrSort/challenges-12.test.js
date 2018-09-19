@@ -50,6 +50,7 @@ const sortByLength = strings => {
 
 const alphabetizeBetter = strs => {
   // Solution code here...
+  return strs.sort((a, b) => a.toLowerCase() > b.toLowerCase());
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -213,7 +214,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should alphabetize without regard to capitalization", () => {
     expect(
       alphabetizeBetter(["Alice", "apple", "alert", "Average"])
