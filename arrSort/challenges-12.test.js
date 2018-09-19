@@ -124,6 +124,11 @@ const sortPeople = people => {
 
 const sortPeopleBetter = people => {
   // Solution code here...
+  return people.sort(
+    (a, b) =>
+      `${a.lastName}${a.firstName}${a.age}` >
+      `${b.lastName}${b.firstName}${b.age}`
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -284,7 +289,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should sort people with more strict ordering", () => {
     const family = [
       new Person("Casey", "Codefellows", 55),
