@@ -53,6 +53,10 @@ const standardizePhoneNumbers = phoneNumbers => {
 
 const onlyOddChars = str => {
   // Solution code here...
+  return [...str].reduce((acc, elm, ndx) => {
+    acc += ndx % 2 === 0 ? "" : elm;
+    return acc;
+  }, "");
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -191,7 +195,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should only return the odd indexed characters from the string", () => {
     expect(onlyOddChars("0123456789")).toStrictEqual("13579");
   });
