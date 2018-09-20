@@ -68,6 +68,7 @@ const onlyOddChars = str => {
 
 const allHappy = strs => {
   // Solution code here...
+  return strs.every(elm => elm.includes(":)"));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -201,7 +202,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should correctly assess whether all the strings are happy", () => {
     const words = [
       "things",
