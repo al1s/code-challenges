@@ -109,6 +109,7 @@ const allAnything = (strs, target) => {
 
 const unenrollBrook = roster => {
   // Solution code here...
+  return roster.map(elm => elm.filter(elmInner => !elmInner.includes("Brook")));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -252,7 +253,7 @@ describe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should remove Brook from all courses", () => {
     const roster = [
       ["Michelle", "Allie", "Brook TESTING"],
