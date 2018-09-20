@@ -157,6 +157,7 @@ const sortByDay = eventStrings => {
 
 const characterByIndex = strs => {
   // Solution code here...
+  return strs.map((elm, ndx) => elm.charAt(ndx));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -309,7 +310,7 @@ describe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should return the ith character of the ith string", () => {
     const words = ["apple", "banana", "cantaloupe"];
 
