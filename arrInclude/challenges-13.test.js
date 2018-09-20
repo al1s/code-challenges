@@ -80,6 +80,7 @@ const allHappy = strs => {
 
 const findAnything = (strs, target) => {
   // Solution code here...
+  return strs.filter(elm => elm.includes(target));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -217,7 +218,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should find all the strings that contain a given string", () => {
     const words = [
       "things",
