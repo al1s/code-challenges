@@ -37,6 +37,11 @@ const findHappiness = strs => {
 
 const standardizePhoneNumbers = phoneNumbers => {
   // Solution code here...
+  return phoneNumbers.map(elm =>
+    [...elm]
+      .filter(elmInner => !isNaN(Number(elmInner)) && elmInner !== " ")
+      .join("")
+  );
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -174,7 +179,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should return a standardized set of phone numbers", () => {
     const nums = ["(123) 456-7890", "(222) 222-2222"];
 
