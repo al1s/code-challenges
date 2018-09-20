@@ -137,6 +137,15 @@ const daysOfWeek = [
 
 const sortByDay = eventStrings => {
   // Solution code here...
+  function pluralize(str) {
+    return `${str}s`;
+  }
+
+  return daysOfWeek.map(elm => {
+    return eventStrings.filter(
+      elmInner => elmInner.includes(elm) || elmInner.includes(pluralize(elm))
+    );
+  });
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -269,7 +278,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should sort events by the day on which they happen", () => {
     const events = [
       "Dancing on Mondays and Tuesdays",
