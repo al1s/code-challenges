@@ -92,6 +92,7 @@ const findAnything = (strs, target) => {
 
 const allAnything = (strs, target) => {
   // Solution code here...
+  return strs.every(elm => elm.includes(target));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -236,7 +237,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should determine whether all the strings contain a given string", () => {
     const words = [
       "things",
